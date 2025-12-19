@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แบบฟอร์มรับข้อมูล</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="page">
+  <header class="topbar">
+    <div class="topbar__inner">
+      <span class="dot" aria-hidden="true"></span>
+
+      <div class="title-wrap">
+        <div class="title">มาเป็นเพื่อนกันใน LINE Official Account</div>
+        <div class="subtitle">เพื่อรับทราบข่าวสารล่าสุดเกี่ยวกับศิริชัยเภสัช</div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <a class="btn btn--primary"
+        id="btnAddLineTop"
+        href="https://lin.ee/FPNyly6"
+        target="_blank"
+        rel="noopener">
+        เพิ่มเพื่อน LINE OA
+      </a>
+    </div>
+  </header>
+
+
+  <main class="wrap">
+  
+
+    <section class="card">
+      <div class="banner" aria-hidden="true"></div>
+ 
+
+      <div class="form-shell">
+        <div class="iframe-wrap">
+          <!-- Your embed -->
+          <iframe
+            id="gform"
+            src="https://docs.google.com/forms/d/e/1FAIpQLScKhgqc-d5illfgBpo1pKhkkQFzEoITIpiQf5_Ec-QGWipCbg/viewform?embedded=true"
+            width="840"
+            height="2055"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Google Form"
+          >กำลังโหลด…</iframe>
+        </div>
+      </div>
+
+    
+    </section>
+  </main>
+
+  <!-- Thank you modal -->
+  <div class="overlay" id="thankOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="thankyou" role="document">
+      <div class="banner" aria-hidden="true"></div>
+      <div class="thankyou__top">
+        <h2>ส่งคำตอบเรียบร้อยแล้ว ✅</h2>
+        <p>เพิ่มเพื่อน LINE Official Account เพื่อรับการติดตามอาการ/ติดต่อเภสัชกร</p>
+      </div>
+
+      <div class="thankyou__body">
+        <div class="qrbox">
+          <!-- ✅ ใส่รูป QR ของคุณตรงนี้ -->
+          <!-- วิธีง่าย: อัปโหลด QR เป็นไฟล์ แล้วใส่ src เป็น URL ของรูป -->
+          <img id="qrImg" src="https://qr-official.line.me/gs/M_086ommzx_GW.png?oat_content=qr" alt="QR Code สำหรับเพิ่มเพื่อน LINE OA">
+          <div class="small">
+            ถ้าสแกนไม่ได้ ให้กดลิงก์เพิ่มเพื่อนแทน:
+            <a id="addLineLink" href="https://lin.ee/FPNyly6" target="_blank" rel="noopener">https://lin.ee/FPNyly6</a>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnClose">ปิด</button>
+          <a class="btn btn--primary" id="btnAddLine" href="https://lin.ee/FPNyly6" target="_blank" rel="noopener">
+            เพิ่มเพื่อน LINE OA
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<script type="module" src="./script.js"></script>
+</body>
+</html>
