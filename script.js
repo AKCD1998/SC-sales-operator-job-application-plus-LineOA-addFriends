@@ -4,6 +4,32 @@
   // 2) ใส่รูป QR ของคุณ (URL รูป)
   const LINE_QR_IMG = "https://qr-official.line.me/gs/M_086ommzx_GW.png?oat_content=qr";
 
+  // ====== THEME TOGGLE ======
+  const themeToggle = document.getElementById('themeToggle');
+  const themeLabel = document.getElementById('themeLabel');
+  const storedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+
+  function setTheme(theme, persist = true){
+    document.documentElement.setAttribute('data-theme', theme);
+    if (persist) localStorage.setItem('theme', theme);
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+    }
+    if (themeLabel) {
+      themeLabel.textContent = theme === 'dark' ? 'โหมดมืด' : 'โหมดสว่าง';
+    }
+  }
+
+  setTheme(initialTheme, false);
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+    });
+  }
+
   // ====== WIRE UI ======
   const overlay = document.getElementById('thankOverlay');
   const btnClose = document.getElementById('btnClose');
